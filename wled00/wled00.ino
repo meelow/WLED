@@ -83,8 +83,8 @@ char versionString[] = "0.8.3";
 
 
 //AP and OTA default passwords (for maximum change them!)
-char apPass[65] = "wled1234";
-char otaPass[33] = "wledota";
+char apPass[65] = "lovelove";
+char otaPass[33] = "lovelove";
 
 
 //spiffs FS only useful for debug (only ESP8266)
@@ -100,7 +100,7 @@ char ntpServerName[] = "0.wled.pool.ntp.org"; //NTP server to use
 
 
 //WiFi CONFIG (all these can be changed via web UI, no need to set them here)
-char clientSSID[33] = "Your_Network";
+char clientSSID[33] = "lednet";
 char clientPass[65] = "";
 char cmDNS[33] = "x";                         //mDNS address (placeholder, will be replaced by wledXXXXXXXXXXXX.local)
 char apSSID[65] = "";                         //AP off by default (unless setup)
@@ -115,7 +115,7 @@ IPAddress staticDNS(8, 8, 8, 8);              //only for NTP, google DNS server
 
 
 //LED CONFIG
-uint16_t ledCount = 30;                       //overcurrent prevented by ABL             
+uint16_t ledCount = 150;                       //overcurrent prevented by ABL             
 bool useRGBW = false;                         //SK6812 strips can contain an extra White channel
 bool autoRGBtoRGBW = false;                   //if RGBW enabled, calculate White channel from RGB
 #define ABL_MILLIAMPS_DEFAULT 850;            //auto lower brightness to stay close to milliampere limit 
@@ -124,7 +124,7 @@ byte bootPreset = 0;                          //save preset to load after power-
 
 byte colS[]{255, 159, 0, 0};                  //default RGB(W) color
 byte colSecS[]{0, 0, 0, 0};                   //default RGB(W) secondary color
-byte briS = 127;                              //default brightness
+byte briS = 100;                              //default brightness
 byte effectDefault = 0;                   
 byte effectSpeedDefault = 75;
 byte effectIntensityDefault = 128;            //intensity is supported on some effects as an additional parameter (e.g. for blink you can change the duty cycle)
@@ -146,7 +146,7 @@ byte briMultiplier =  100;                    //% of brightness to set (to limit
 
 
 //User Interface CONFIG
-char serverDescription[33] = "WLED Light";    //Name of module
+char serverDescription[33] = "Fux Light";    //Name of module
 byte currentTheme = 0;                        //UI theme index for settings and classic UI
 byte uiConfiguration = 0;                     //0: automatic (depends on user-agent) 1: classic UI 2: mobile UI
 bool useHSB = true;                           //classic UI: use HSB sliders instead of RGB by default
@@ -162,17 +162,17 @@ bool irEnabled     = false;                   //Infrared receiver
 uint16_t udpPort    = 21324;                  //WLED notifier default port
 uint16_t udpRgbPort = 19446;                  //Hyperion port
 
-bool receiveNotificationBrightness = true;    //apply brightness from incoming notifications
-bool receiveNotificationColor      = true;    //apply color
-bool receiveNotificationEffects    = true;    //apply effects setup
-bool notifyDirect =  true;                    //send notification if change via UI or HTTP API
-bool notifyButton =  true;                    //send if updated by button or infrared remote
+bool receiveNotificationBrightness = false;    //apply brightness from incoming notifications
+bool receiveNotificationColor      = false;    //apply color
+bool receiveNotificationEffects    = false;    //apply effects setup
+bool notifyDirect =  false;                    //send notification if change via UI or HTTP API
+bool notifyButton =  false;                    //send if updated by button or infrared remote
 bool notifyAlexa  = false;                    //send notification if updated via Alexa
 bool notifyMacro  = false;                    //send notification for macro
-bool notifyHue    =  true;                    //send notification if Hue light changes
+bool notifyHue    = false;                    //send notification if Hue light changes
 bool notifyTwice  = false;                    //notifications use UDP: enable if devices don't sync reliably
 
-bool alexaEnabled = true;                     //enable device discovery by Amazon Echo
+bool alexaEnabled = false;                     //enable device discovery by Amazon Echo
 char alexaInvocationName[33] = "Light";       //speech control name of device. Choose something voice-to-text can understand
 
 char blynkApiKey[36] = "";                    //Auth token for Blynk server. If empty, no connection will be made
@@ -190,7 +190,7 @@ bool e131Multicast = false;
 
 char mqttDeviceTopic[33] = "";                //main MQTT topic (individual per device, default is wled/mac)
 char mqttGroupTopic[33] = "wled/all";         //second MQTT topic (for example to group devices)
-char mqttServer[33] = "";                     //both domains and IPs should work (no SSL)
+char mqttServer[33] = "192.168.0.100";        //both domains and IPs should work (no SSL)
 
 bool huePollingEnabled = false;               //poll hue bridge for light state
 uint16_t huePollIntervalMs = 2500;            //low values (< 1sec) may cause lag but offer quicker response
