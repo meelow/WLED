@@ -1,0 +1,5 @@
+FX=79 ; animation=ripple
+SX=30 ; anim speed=low
+FP=13 ; palette=sunset
+A=255 ; brightness=high
+

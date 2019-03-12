@@ -1,22 +1,5 @@
 [
     {
-        "id": "51ca07fe.8a8ed8",
-        "type": "tab",
-        "label": "receive event",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "c10e4f4f.4c312",
-        "type": "tab",
-        "label": "Flow 2"
-    },
-    {
-        "id": "bb175d33.f5d8f",
-        "type": "tab",
-        "label": "Flow 3"
-    },
-    {
         "id": "8321c44d.c105d8",
         "type": "tab",
         "label": "SetAnimation",
@@ -58,36 +41,36 @@
         "info": "",
         "in": [
             {
-                "x": 50,
-                "y": 30,
+                "x": 33,
+                "y": 231,
                 "wires": [
-                    {
-                        "id": "dbca9a94.06a218"
-                    },
                     {
                         "id": "9eb762af.5d55"
                     },
                     {
                         "id": "62c6cf00.57d41"
+                    },
+                    {
+                        "id": "5d238ae7.c95e74"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 767,
-                "y": 70,
+                "x": 1294,
+                "y": 177,
                 "wires": [
                     {
                         "id": "dbca9a94.06a218",
                         "port": 0
                     },
                     {
-                        "id": "12039adc.ec87b5",
+                        "id": "83acef8e.1ebd6",
                         "port": 0
                     },
                     {
-                        "id": "83acef8e.1ebd6",
+                        "id": "2a29a6f2.f5b91a",
                         "port": 0
                     }
                 ]
@@ -218,318 +201,6 @@
         "disp": true,
         "width": "6",
         "collapse": false
-    },
-    {
-        "id": "306b7793.cf96e8",
-        "type": "mqtt in",
-        "z": "51ca07fe.8a8ed8",
-        "name": "milos-raspi-mqtt",
-        "topic": "event",
-        "qos": "2",
-        "broker": "MQTT.Localhost",
-        "x": 165.5,
-        "y": 164,
-        "wires": [
-            [
-                "3b91a444.65104c"
-            ]
-        ]
-    },
-    {
-        "id": "3b91a444.65104c",
-        "type": "debug",
-        "z": "51ca07fe.8a8ed8",
-        "name": "",
-        "active": false,
-        "console": "true",
-        "complete": "payload",
-        "x": 340,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "5c03cfcf.023e7",
-        "type": "inject",
-        "z": "c10e4f4f.4c312",
-        "name": "",
-        "topic": "event",
-        "payload": "1",
-        "payloadType": "str",
-        "repeat": "5",
-        "crontab": "",
-        "once": false,
-        "x": 90,
-        "y": 180,
-        "wires": [
-            [
-                "9534f2b7.01fb7"
-            ]
-        ]
-    },
-    {
-        "id": "9534f2b7.01fb7",
-        "type": "mqtt out",
-        "z": "c10e4f4f.4c312",
-        "name": "",
-        "topic": "event",
-        "qos": "",
-        "retain": "",
-        "broker": "MQTT.Localhost",
-        "x": 310,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "8aeaa5fc.07b8e8",
-        "type": "mqtt out",
-        "z": "c10e4f4f.4c312",
-        "name": "",
-        "topic": "ping",
-        "qos": "",
-        "retain": "",
-        "broker": "MQTT.Localhost",
-        "x": 305,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "1e05bea4.4df131",
-        "type": "inject",
-        "z": "c10e4f4f.4c312",
-        "name": "",
-        "topic": "ping",
-        "payload": "0",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 90,
-        "y": 280,
-        "wires": [
-            [
-                "8aeaa5fc.07b8e8"
-            ]
-        ]
-    },
-    {
-        "id": "31f59ad.1afd366",
-        "type": "mqtt out",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "wled/206/api",
-        "qos": "",
-        "retain": "",
-        "broker": "MQTT.Localhost",
-        "x": 770,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "4fc21046.647c3",
-        "type": "debug",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "active": true,
-        "console": "true",
-        "complete": "payload",
-        "x": 780,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "6180a415.dc255c",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "A",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 149.5,
-        "y": 212,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "3368687e.d1df28",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "10",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 540,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "e6cf4f0f.0b175",
-        "type": "join",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "mode": "custom",
-        "build": "string",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "=",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "2",
-        "x": 316,
-        "y": 232,
-        "wires": [
-            [
-                "4fc21046.647c3",
-                "31f59ad.1afd366"
-            ]
-        ]
-    },
-    {
-        "id": "c85986d6.a93678",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "FX",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 150,
-        "y": 260,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "553cbc22.b8dab4",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "20",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 580,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "695408a2.cd2058",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "30",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 620,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "e3b771bf.dbfeb",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "40",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 660,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "4bc8559b.1f72ac",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "50",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 700,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "30c688a8.a2ace8",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "100",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 740,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
-    },
-    {
-        "id": "21bb9fdc.17df2",
-        "type": "inject",
-        "z": "bb175d33.f5d8f",
-        "name": "",
-        "topic": "",
-        "payload": "200",
-        "payloadType": "str",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 130,
-        "y": 780,
-        "wires": [
-            [
-                "e6cf4f0f.0b175"
-            ]
-        ]
     },
     {
         "id": "2a76237d.8e9fac",
@@ -1089,7 +760,7 @@
         "id": "198e3140.1f779f",
         "type": "debug",
         "z": "50c362b4.3cf08c",
-        "name": "",
+        "name": "SentToWLED",
         "active": true,
         "console": "true",
         "complete": "payload",
@@ -1332,8 +1003,8 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 111,
-        "y": 564,
+        "x": 139,
+        "y": 824,
         "wires": [
             [
                 "c4775364.f9cdc"
@@ -1351,8 +1022,8 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 108,
-        "y": 608,
+        "x": 136,
+        "y": 868,
         "wires": [
             [
                 "c4775364.f9cdc"
@@ -1370,8 +1041,8 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 104,
-        "y": 657,
+        "x": 132,
+        "y": 917,
         "wires": [
             [
                 "c4775364.f9cdc"
@@ -1389,8 +1060,8 @@
         "repeat": "",
         "crontab": "",
         "once": false,
-        "x": 105,
-        "y": 729,
+        "x": 133,
+        "y": 989,
         "wires": [
             [
                 "c4775364.f9cdc"
@@ -1405,8 +1076,8 @@
         "active": true,
         "console": "false",
         "complete": "false",
-        "x": 669,
-        "y": 647,
+        "x": 697,
+        "y": 907,
         "wires": []
     },
     {
@@ -1417,8 +1088,8 @@
         "func": "if( msg.payload==\"send\")\n{\n  msg.payload=\"FX=\"+context.AnimationNr;\n  context.AnimationNr =0;\n  return [msg]\n}\nelse\n{\n  context.AnimationNr = msg.payload\n  return null;\n}\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 474.5,
-        "y": 485,
+        "x": 502.5,
+        "y": 745,
         "wires": [
             [
                 "26f8917a.6e3c7e",
@@ -1443,8 +1114,8 @@
         "min": 0,
         "max": "65",
         "step": 1,
-        "x": 303,
-        "y": 767,
+        "x": 331,
+        "y": 1027,
         "wires": [
             [
                 "c4775364.f9cdc"
@@ -1469,8 +1140,8 @@
         "payload": "send",
         "payloadType": "str",
         "topic": "",
-        "x": 321,
-        "y": 803,
+        "x": 349,
+        "y": 1063,
         "wires": [
             [
                 "c4775364.f9cdc"
@@ -1544,7 +1215,7 @@
         "type": "debug",
         "z": "73930700.6d46f8",
         "name": "",
-        "active": true,
+        "active": false,
         "console": "true",
         "complete": "payload",
         "x": 543,
@@ -1611,7 +1282,7 @@
         "type": "debug",
         "z": "73930700.6d46f8",
         "name": "",
-        "active": true,
+        "active": false,
         "console": "true",
         "complete": "payload",
         "x": 543,
@@ -2060,10 +1731,12 @@
         "format": "lines",
         "chunk": false,
         "sendError": false,
-        "x": 471,
-        "y": 85,
+        "x": 817,
+        "y": 183,
         "wires": [
-            []
+            [
+                "2a29a6f2.f5b91a"
+            ]
         ]
     },
     {
@@ -2071,12 +1744,12 @@
         "type": "file in",
         "z": "2f8ee739.849258",
         "name": "",
-        "filename": "/root/saft/fadeout.txt",
+        "filename": "",
         "format": "lines",
         "chunk": false,
         "sendError": false,
-        "x": 278,
-        "y": 36,
+        "x": 546,
+        "y": 130,
         "wires": [
             []
         ]
@@ -2096,11 +1769,11 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 307,
-        "y": 84,
+        "x": 373,
+        "y": 200,
         "wires": [
             [
-                "12039adc.ec87b5"
+                "e94e94ab.960e28"
             ]
         ]
     },
@@ -2109,12 +1782,12 @@
         "type": "file in",
         "z": "2f8ee739.849258",
         "name": "",
-        "filename": "/root/saft/fadein.txt",
+        "filename": "",
         "format": "lines",
         "chunk": false,
         "sendError": false,
-        "x": 496,
-        "y": 159,
+        "x": 747,
+        "y": 278,
         "wires": [
             []
         ]
@@ -2134,11 +1807,11 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 308,
-        "y": 160,
+        "x": 374,
+        "y": 276,
         "wires": [
             [
-                "83acef8e.1ebd6"
+                "c5ef88ee.4eb4f8"
             ]
         ]
     },
@@ -2146,8 +1819,8 @@
         "id": "9f99006c.cf865",
         "type": "subflow:2f8ee739.849258",
         "z": "8321c44d.c105d8",
-        "x": 732,
-        "y": 279,
+        "x": 808,
+        "y": 278,
         "wires": [
             [
                 "dec0258b.4778f8"
@@ -2158,13 +1831,13 @@
         "id": "112564a0.1de85b",
         "type": "change",
         "z": "8321c44d.c105d8",
-        "name": "/root/saft/animation2.txt",
+        "name": "animation2.txt",
         "rules": [
             {
                 "t": "set",
                 "p": "filename",
                 "pt": "msg",
-                "to": "/root/saft/animation2.txt",
+                "to": "animation2.txt",
                 "tot": "str"
             }
         ],
@@ -2173,7 +1846,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
+        "x": 490,
         "y": 279,
         "wires": [
             [
@@ -2185,8 +1858,8 @@
         "id": "a432c72b.2e6828",
         "type": "subflow:2f8ee739.849258",
         "z": "8321c44d.c105d8",
-        "x": 720,
-        "y": 150,
+        "x": 789,
+        "y": 151,
         "wires": [
             [
                 "dec0258b.4778f8"
@@ -2197,13 +1870,13 @@
         "id": "754ba33.a925c5c",
         "type": "change",
         "z": "8321c44d.c105d8",
-        "name": "/root/saft/animation1.txt",
+        "name": "animation1.txt",
         "rules": [
             {
                 "t": "set",
                 "p": "filename",
                 "pt": "msg",
-                "to": "/root/saft/animation1.txt",
+                "to": "animation1.txt",
                 "tot": "str"
             }
         ],
@@ -2212,7 +1885,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 506,
+        "x": 476,
         "y": 152,
         "wires": [
             [
@@ -2239,7 +1912,8 @@
         "y": 224,
         "wires": [
             [
-                "112564a0.1de85b"
+                "112564a0.1de85b",
+                "531d92af.f3314c"
             ]
         ]
     },
@@ -2251,9 +1925,9 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "repeat": "10",
+        "repeat": "20",
         "crontab": "",
-        "once": false,
+        "once": true,
         "x": 266,
         "y": 36,
         "wires": [
@@ -2284,6 +1958,242 @@
             [
                 "18f3b6ad.c330a9"
             ]
+        ]
+    },
+    {
+        "id": "2a29a6f2.f5b91a",
+        "type": "change",
+        "z": "2f8ee739.849258",
+        "name": "StripComments",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "(.*);.*",
+                "fromt": "re",
+                "to": "$1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 973,
+        "y": 183,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb796c83.b767c",
+        "type": "inject",
+        "z": "8321c44d.c105d8",
+        "name": "",
+        "topic": "",
+        "payload": "send",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 133,
+        "y": 415,
+        "wires": [
+            [
+                "808a0b80.0eff38"
+            ]
+        ]
+    },
+    {
+        "id": "8434bcdc.0874",
+        "type": "subflow:2f8ee739.849258",
+        "z": "8321c44d.c105d8",
+        "x": 819,
+        "y": 413,
+        "wires": [
+            [
+                "dec0258b.4778f8"
+            ]
+        ]
+    },
+    {
+        "id": "808a0b80.0eff38",
+        "type": "change",
+        "z": "8321c44d.c105d8",
+        "name": "ripple.txt",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "ripple.txt",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 481,
+        "y": 414,
+        "wires": [
+            [
+                "8434bcdc.0874"
+            ]
+        ]
+    },
+    {
+        "id": "531d92af.f3314c",
+        "type": "delay",
+        "z": "8321c44d.c105d8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 330,
+        "y": 359,
+        "wires": [
+            [
+                "808a0b80.0eff38"
+            ]
+        ]
+    },
+    {
+        "id": "e94e94ab.960e28",
+        "type": "template",
+        "z": "2f8ee739.849258",
+        "name": "add global.AnimationPath",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{global.AnimationPath}}}{{{filename}}}",
+        "output": "str",
+        "x": 616,
+        "y": 194,
+        "wires": [
+            [
+                "12039adc.ec87b5",
+                "2340c312.30263c"
+            ]
+        ]
+    },
+    {
+        "id": "bb097875.bf52e8",
+        "type": "change",
+        "z": "2f8ee739.849258",
+        "name": "Global AnimationPath",
+        "rules": [
+            {
+                "t": "set",
+                "p": "AnimationPath",
+                "pt": "global",
+                "to": "/root/WLED/thethingbox/",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 472,
+        "y": 35,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2d0872dc.0392fe",
+        "type": "inject",
+        "z": "2f8ee739.849258",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 281.5,
+        "y": 34,
+        "wires": [
+            [
+                "bb097875.bf52e8"
+            ]
+        ]
+    },
+    {
+        "id": "5d238ae7.c95e74",
+        "type": "template",
+        "z": "2f8ee739.849258",
+        "name": "fadeout.txt",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{global.AnimationPath}}}fadeout.txt",
+        "output": "str",
+        "x": 379,
+        "y": 130,
+        "wires": [
+            [
+                "dbca9a94.06a218"
+            ]
+        ]
+    },
+    {
+        "id": "c5ef88ee.4eb4f8",
+        "type": "template",
+        "z": "2f8ee739.849258",
+        "name": "fadein.txt",
+        "field": "filename",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{global.AnimationPath}}}fadein.txt",
+        "output": "str",
+        "x": 571,
+        "y": 276,
+        "wires": [
+            [
+                "83acef8e.1ebd6"
+            ]
+        ]
+    },
+    {
+        "id": "2340c312.30263c",
+        "type": "display",
+        "z": "2f8ee739.849258",
+        "active": true,
+        "x": 1031,
+        "y": 321,
+        "wires": []
+    },
+    {
+        "id": "d6e75374.447ca",
+        "type": "template",
+        "z": "2f8ee739.849258",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{payload}} !",
+        "output": "str",
+        "x": 527,
+        "y": 523,
+        "wires": [
+            []
         ]
     }
 ]
