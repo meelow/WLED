@@ -1,0 +1,4 @@
+FX=42 ; effect = fireworks
+FP=10 ; palette = forrest
+SX=60 ; speed: size of the light lines (higher=smaller)
+IX=150; intensity: nuber of lit lines (higher=more)

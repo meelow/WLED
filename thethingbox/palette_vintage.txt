@@ -1,0 +1,3 @@
+FX=65 ; effect = palette
+FP=23 ; Vintage (23)
+SX=60 ; speed: Low to medium

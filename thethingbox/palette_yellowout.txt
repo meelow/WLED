@@ -1,0 +1,3 @@
+FX=65 ; palette_yellowout.txt
+FP=17 ; palette=yellowout or Vintage (23)
+SX=60 ; speed: Low to medium
