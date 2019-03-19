@@ -4,6 +4,7 @@
 /*
  * @title WLED project sketch
  * @version 0.8.4-dev
+ * @branch 
  * @author Christian Schwinne
  */
 
@@ -17,11 +18,11 @@
 //#define WLED_DISABLE_OTA
 
 //You need to choose 1-2 of these features to disable:
-//#define WLED_DISABLE_ALEXA
-//#define WLED_DISABLE_BLYNK
-//#define WLED_DISABLE_CRONIXIE
-//#define WLED_DISABLE_HUESYNC
-//#define WLED_DISABLE_INFRARED    //there is no pin left for this on ESP8266-01
+#define WLED_DISABLE_ALEXA
+#define WLED_DISABLE_BLYNK
+#define WLED_DISABLE_CRONIXIE
+#define WLED_DISABLE_HUESYNC
+#define WLED_DISABLE_INFRARED    //there is no pin left for this on ESP8266-01
 //#define WLED_DISABLE_MOBILE_UI
 
 //to toggle usb serial debug (un)comment following line(s)
